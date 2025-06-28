@@ -1,16 +1,22 @@
-# frontend/Dockerfile
-FROM node:20 AS dev
+FROM python:3.11-slim
+
+# No generar .pyc y salida sin buffer
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+# Establecer directorio de trabajo
 WORKDIR /app
 
-# 1. Instalar npm 9 (npm 10 tiene el bug que dispara el error de Rollup)
-RUN npm install -g npm@9
+# Instalar dependencias del sistema
+RUN apt-get update && apt-get install -y build-essential && rm -rf /var/lib/apt/lists/*
 
-# 2. Instalar dependencias sin opcionales
-COPY package*.json ./
-RUN npm install --omit=optional
+# Instalar dependencias de Python
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# 3. Copiar resto del código
+# Copiar el código del proyecto
 COPY . .
 
-EXPOSE 5173
-CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+# Exponer puerto y lanzar la app
+EXPOSE 8000
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
