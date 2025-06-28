@@ -1,17 +1,20 @@
-FROM node:20-alpine
+# Usamos una imagen de Node más compatible que Alpine
+FROM node:20-slim
 
-# Establecer directorio de trabajo
+# Crear y establecer el directorio de trabajo
 WORKDIR /app
 
-# Instalar dependencias
-COPY package.json package-lock.json ./
-RUN npm install --omit=optional
+# Copiar package.json y lock primero para instalar deps
+COPY package*.json ./
 
-# Copiar código del frontend
+# Instalar dependencias con limpieza
+RUN npm install --force
+
+# Copiar el resto del código fuente
 COPY . .
 
-# Exponer puerto para Vite
+# Exponer el puerto donde Vite sirve
 EXPOSE 5173
 
-# Iniciar la app
+# Comando para desarrollo
 CMD ["npm", "run", "dev"]
