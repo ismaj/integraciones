@@ -1,12 +1,16 @@
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from app.api.endpoints import cliente, factura
-app = FastAPI()
-app.include_router(cliente.router)
-app.include_router(factura.router)
+from app.db import db
+from app.api import cliente, factura
 
+# Crear tablas si no existen
+db.Base.metadata.create_all(bind=db.engine)
 
-@app.get("/")
-def read_root():
-    return {"message": "Welcome to the FastAPI application!"}
-    
+# Instancia principal de la aplicación
+app = FastAPI(
+    title="API Clientes y Facturación",
+    version="1.0.0"
+)
+
+# Incluir routers
+app.include_router(cliente.router, prefix="/api/clientes", tags=["Clientes"])
+app.include_router(factura.router, prefix="/api/facturas", tags=["Facturas"])
