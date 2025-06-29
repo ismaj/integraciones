@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.db import db
-from app.api import cliente, factura
+from app.api.endpoints import cliente, factura
 
 # Crear tablas si no existen
 db.Base.metadata.create_all(bind=db.engine)
