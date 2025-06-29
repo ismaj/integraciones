@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.schemas.factura import FacturaCreate, FacturaOut
 from app.crud import factura as crud_factura
-from app.dependencies import get_db
+from app.api.dependencies import get_db
 from typing import List
 
 router = APIRouter(prefix="/facturas", tags=["Facturas"])
