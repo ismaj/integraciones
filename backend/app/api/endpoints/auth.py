@@ -4,6 +4,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 
 from app.schemas.user import UserCreate, UserOut
 from app.models import user as user_model
+from app.db.session import SessionLocal
 from app.crud import user as user_crud
 from app.utils.security import verify_password, create_access_token
 
