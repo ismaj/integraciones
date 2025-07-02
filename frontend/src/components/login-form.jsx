@@ -19,53 +19,48 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-2">Login to your account.</h2>
-        <p className="text-sm text-center text-gray-500 mb-6">Hello, welcome back to your account</p>
-        
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500">
+      <div className="bg-white p-10 rounded-xl shadow-lg w-full max-w-sm">
+        <h2 className="text-2xl font-bold text-center mb-2">LOGIN</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-indigo-600 mb-1">E-mail or username</label>
             <input
               type="text"
-              placeholder="example@email.com"
+              placeholder="Email"
               value={username}
               onChange={e => setUsername(e.target.value)}
-              className="w-full px-4 py-2 border border-indigo-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
           </div>
-
           <div>
-            <label className="block text-sm font-medium text-gray-600 mb-1">Password</label>
             <input
               type="password"
-              placeholder="Your Password"
+              placeholder="Password"
               value={password}
               onChange={e => setPassword(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
           </div>
-
-          {error && (
-            <p className="text-red-500 text-sm text-center">{error}</p>
-          )}
-
-          <div className="flex items-center justify-between text-sm text-gray-600">
-            <label className="flex items-center space-x-2">
-              <input type="checkbox" className="rounded" />
-              <span>Remember me</span>
+          <div className="flex items-center justify-between text-sm">
+            <label className="flex items-center">
+              <input type="checkbox" className="mr-2" />
+              Remember me
             </label>
-            <a href="#" className="text-indigo-600 hover:underline">Forgot Password?</a>
+            <a href="#" className="text-purple-500 hover:underline">
+              Forgot Password?
+            </a>
           </div>
-
           <button
             type="submit"
-            className="w-full py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors"
+            className="w-full bg-pink-500 text-white py-2 rounded-md hover:bg-pink-600 transition-colors"
           >
-            Login
+            LOGIN
           </button>
+          {error && <p className="text-red-500 text-center">{error}</p>}
         </form>
+        <p className="text-center text-sm mt-4">
+          Not a member? <a href="#" className="text-purple-600 underline">Sign up now</a>
+        </p>
       </div>
     </div>
   );
