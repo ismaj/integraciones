@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.db.db import init_db
-from app.api.endpoints import cliente, factura
+from app.api.endpoints import cliente, factura,auth
 
 # Instancia principal de la aplicación
 app = FastAPI(
@@ -11,3 +11,4 @@ init_db()
 # Incluir routers
 app.include_router(cliente.router, prefix="/api/clientes", tags=["Clientes"])
 app.include_router(factura.router, prefix="/api/facturas", tags=["Facturas"])
+app.include_router(auth.router, prefix="/api/auth", tags=["Autenticación"]) 
