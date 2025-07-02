@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { login } from '../api/auth';
+import './login-form.css'; // Asegúrate de tener este archivo
 
 export default function LoginForm() {
   const [username, setUsername] = useState('');
@@ -19,48 +20,34 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500">
-      <div className="bg-white p-10 rounded-xl shadow-lg w-full max-w-sm">
-        <h2 className="text-2xl font-bold text-center mb-2">LOGIN</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <input
-              type="text"
-              placeholder="Email"
-              value={username}
-              onChange={e => setUsername(e.target.value)}
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-            />
-          </div>
-          <div>
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-            />
-          </div>
-          <div className="flex items-center justify-between text-sm">
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" />
-              Remember me
+    <div className="login-background">
+      <div className="login-container">
+        <h2 className="login-title">LOGIN</h2>
+        <form onSubmit={handleSubmit} className="login-form">
+          <input
+            type="text"
+            placeholder="Email"
+            value={username}
+            onChange={e => setUsername(e.target.value)}
+            className="login-input"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            className="login-input"
+          />
+          <div className="login-options">
+            <label>
+              <input type="checkbox" /> Remember me
             </label>
-            <a href="#" className="text-purple-500 hover:underline">
-              Forgot Password?
-            </a>
+            <a href="#">Forgot Password?</a>
           </div>
-          <button
-            type="submit"
-            className="w-full bg-pink-500 text-white py-2 rounded-md hover:bg-pink-600 transition-colors"
-          >
-            LOGIN
-          </button>
-          {error && <p className="text-red-500 text-center">{error}</p>}
+          <button type="submit" className="login-button">LOGIN</button>
+          {error && <p className="login-error">{error}</p>}
         </form>
-        <p className="text-center text-sm mt-4">
-          Not a member? <a href="#" className="text-purple-600 underline">Sign up now</a>
-        </p>
+        <p className="login-footer">Not a member? <a href="#">Sign up now</a></p>
       </div>
     </div>
   );
