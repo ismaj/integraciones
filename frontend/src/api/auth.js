@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://192.168.1.5:8000'; // cambia por la IP de tu backend
+const API_URL = 'http://192.168.1.5:8000/api/auth'; // cambia por la IP de tu backend
 
 export const login = async (username, password) => {
   const response = await axios.post(`${API_URL}/login`, new URLSearchParams({
