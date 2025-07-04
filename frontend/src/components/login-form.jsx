@@ -15,7 +15,7 @@ export default function LoginForm() {
       const data = await login(username, password);
       localStorage.setItem('token', data.access_token);
       alert('Login exitoso');
-       navigate('/clientes'); // Redirige a la página de clientes
+      navigate('/clientes'); // Redirige a la página de clientes
     } catch (err) {
       setError('Credenciales incorrectas');
     }

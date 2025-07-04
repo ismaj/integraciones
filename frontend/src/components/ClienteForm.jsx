@@ -1,19 +1,19 @@
 import { useState } from 'react';
-import { createCliente } from '../api/clientes';
+import { createCliente } from '../api/cliente';
 
 export default function ClienteForm() {
   const [nombre, setNombre] = useState('');
-  const [correo, setCorreo] = useState('');
-  const [telefono, setTelefono] = useState('');
+  const [dni, setDni] = useState('');
+  const [direccion, setDireccion] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await createCliente({ nombre, correo, telefono });
+      await createCliente({ nombre, dni, direccion });
       alert("Cliente creado exitosamente");
       setNombre('');
-      setCorreo('');
-      setTelefono('');
+      setDni('');
+      setDireccion('');
     } catch (err) {
       alert("Error al crear cliente");
     }
@@ -22,8 +22,8 @@ export default function ClienteForm() {
   return (
     <form onSubmit={handleSubmit} className="form">
       <input type="text" placeholder="Nombre" value={nombre} onChange={e => setNombre(e.target.value)} required />
-      <input type="email" placeholder="Correo" value={correo} onChange={e => setCorreo(e.target.value)} />
-      <input type="text" placeholder="Teléfono" value={telefono} onChange={e => setTelefono(e.target.value)} />
+      <input type="text" placeholder="DNI" value={dni} onChange={e => setDni(e.target.value)} />
+      <input type="text" placeholder="Direccion" value={direccion} onChange={e => setDireccion(e.target.value)} />
       <button type="submit">Guardar Cliente</button>
     </form>
   );
