@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { login } from '../api/auth';
 import './login-form.css'; // Asegúrate de tener este archivo
+import { useNavigate } from 'react-router-dom';
 
 export default function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -13,7 +15,7 @@ export default function LoginForm() {
       const data = await login(username, password);
       localStorage.setItem('token', data.access_token);
       alert('Login exitoso');
-       window.location.href = '/clientes';
+       navigate('/clientes'); // Redirige a la página de clientes
     } catch (err) {
       setError('Credenciales incorrectas');
     }

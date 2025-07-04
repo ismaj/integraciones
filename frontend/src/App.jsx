@@ -1,10 +1,13 @@
 import LoginPage from './pages/LoginPage';
-
+import ClientesPage from './pages/ClientesPage';
 function App() {
   return (
-    <div className="App">
-      <LoginPage />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/clientes" element={<ClientesPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
