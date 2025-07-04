@@ -4,7 +4,7 @@ from datetime import date
 class ClienteBase(BaseModel):
     nombre: str
     dni: str
-    direccion: str | None = None
+    direccion: str 
   
 
 class ClienteCreate(ClienteBase):
