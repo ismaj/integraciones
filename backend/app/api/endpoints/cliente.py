@@ -5,7 +5,7 @@ from app.crud import cliente as crud_cliente
 from app.api.endpoints.dependencies import get_db
 from typing import List
 
-router = APIRouter(prefix="/clientes", tags=["Clientes"])
+router = APIRouter()
 
 @router.post("/", response_model=ClienteOut)
 def crear_cliente(cliente: ClienteCreate, db: Session = Depends(get_db)):
