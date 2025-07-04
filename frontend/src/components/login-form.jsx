@@ -13,7 +13,7 @@ export default function LoginForm() {
       const data = await login(username, password);
       localStorage.setItem('token', data.access_token);
       alert('Login exitoso');
-      // window.location.href = '/dashboard';
+       window.location.href = '/clientes';
     } catch (err) {
       setError('Credenciales incorrectas');
     }
