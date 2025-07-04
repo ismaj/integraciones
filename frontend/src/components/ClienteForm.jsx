@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { createCliente } from '../api/cliente';
+import { createCliente } from '../api/clientes';
 
 export default function ClienteForm() {
   const [nombre, setNombre] = useState('');
