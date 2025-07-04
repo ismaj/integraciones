@@ -1,0 +1,25 @@
+.cliente-container {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #f953c6, #b91d73);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3rem;
+  color: #fff;
+}
+
+form.form input,
+form.form button {
+  margin: 0.5rem;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: none;
+  width: 300px;
+}
+
+form.form button {
+  background-color: #fff;
+  color: #b91d73;
+  font-weight: bold;
+}
