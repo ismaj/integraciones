@@ -1,62 +1,83 @@
-/* Clientes.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #b3d9ff, #e6f2ff);
+  height: 100vh;
+}
 
 .clientes-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(to right, #e66465, #9198e5);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  justify-content: center;
+  padding-top: 40px;
 }
 
-.clientes-box {
+.formulario-clientes {
   background-color: white;
-  padding: 30px;
+  padding: 30px 40px;
   border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  width: 700px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  width: 300px;
+  margin-bottom: 30px;
 }
 
-.clientes-box h2 {
+.formulario-clientes h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #333;
+  color: #003366;
 }
 
-.clientes-box input {
-  width: calc(33.3% - 10px);
-  margin: 5px;
+.formulario-clientes label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #003366;
+}
+
+.formulario-clientes input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.formulario-clientes button {
+  margin-top: 20px;
+  width: 100%;
   padding: 10px;
-  border: 1px solid #aaa;
-  border-radius: 5px;
-}
-
-.clientes-box button {
-  background-color: #f54784;
+  background-color: #3399ff;
   color: white;
-  padding: 10px 20px;
-  margin: 10px 5px;
+  font-weight: bold;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
-.clientes-box button:hover {
-  background-color: #d63b6e;
+.formulario-clientes button:hover {
+  background-color: #267acc;
 }
 
-.clientes-table {
-  width: 100%;
-  margin-top: 20px;
+.tabla-clientes {
   border-collapse: collapse;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.clientes-table th, .clientes-table td {
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: left;
+.tabla-clientes th, .tabla-clientes td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
 }
 
-.clientes-table th {
-  background-color: #f0f0f0;
+.tabla-clientes th {
+  background-color: #3399ff;
+  color: white;
 }
