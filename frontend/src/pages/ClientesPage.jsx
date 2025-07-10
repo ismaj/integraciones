@@ -1,6 +1,6 @@
 import ClienteForm from "../components/ClienteForm";
 import ClienteTable from "../components/ClienteTable";
-import '../ClienteForm.css'; // Asegúrate de tener este archivo para estilos
+import '../components/ClienteForm.css'; // Asegúrate de tener este archivo para estilos
 
 export default function ClientesPage() {
   return (
