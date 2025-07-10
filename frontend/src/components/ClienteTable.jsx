@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getClientes } from '../api/clientes';
+import './ClienteForm.css'; // Asegúrate de tener este archivo
 
 export default function ClienteTable() {
   const [clientes, setClientes] = useState([]);
@@ -9,7 +10,8 @@ export default function ClienteTable() {
   }, []);
 
   return (
-    <table>
+    <div className='clientes-container'>
+    <table className='tabla-clientes'>
       <thead>
         <tr>
           <th>Nombre</th>
@@ -27,5 +29,6 @@ export default function ClienteTable() {
         ))}
       </tbody>
     </table>
+    </div>
   );
 }
