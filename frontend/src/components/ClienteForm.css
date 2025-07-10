@@ -1,32 +1,28 @@
-html,body {
-  padding: 0;
-  height: 100%;
+body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom right, #b3d9ff, #e6f2ff);
+  background: linear-gradient(to bottom right, #cce6ff, #e6f2ff);
+  min-height: 100vh;
 }
 
-.clientes-container {
+.cliente-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding-top: 40px;
+  align-items: flex-start;
+  padding: 40px;
+  gap: 40px;
 }
 
 .formulario-clientes {
   background-color: white;
-  padding: 30px 40px;
+  padding: 30px;
   border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  width: 300px;
-  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 320px;
 }
 
 .formulario-clientes h2 {
   text-align: center;
-  margin-bottom: 20px;
   color: #003366;
 }
 
@@ -39,7 +35,7 @@ html,body {
 
 .formulario-clientes input {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   margin-top: 5px;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -49,7 +45,7 @@ html,body {
 .formulario-clientes button {
   margin-top: 20px;
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background-color: #3399ff;
   color: white;
   font-weight: bold;
@@ -63,19 +59,23 @@ html,body {
 }
 
 .tabla-clientes {
-  border-collapse: collapse;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
+  width: 700px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.tabla-clientes th, .tabla-clientes td {
+.tabla-clientes table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-clientes th,
+.tabla-clientes td {
   padding: 12px;
   border-bottom: 1px solid #ddd;
+  text-align: left;
 }
 
 .tabla-clientes th {
