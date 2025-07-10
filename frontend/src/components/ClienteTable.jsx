@@ -21,8 +21,8 @@ export default function ClienteTable() {
         {clientes.map(c => (
           <tr key={c.id}>
             <td>{c.nombre}</td>
-            <td>{c.correo}</td>
-            <td>{c.telefono}</td>
+            <td>{c.dni}</td>
+            <td>{c.direccion}</td>
           </tr>
         ))}
       </tbody>

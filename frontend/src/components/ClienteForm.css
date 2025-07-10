@@ -1,25 +1,62 @@
-.cliente-container {
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(135deg, #f953c6, #b91d73);
+/* Clientes.css */
+
+.clientes-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding-top: 3rem;
-  color: #fff;
+  min-height: 100vh;
+  background: linear-gradient(to right, #e66465, #9198e5);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-form.form input,
-form.form button {
-  margin: 0.5rem;
-  padding: 0.7rem;
-  border-radius: 8px;
+.clientes-box {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  width: 700px;
+}
+
+.clientes-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.clientes-box input {
+  width: calc(33.3% - 10px);
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.clientes-box button {
+  background-color: #f54784;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px 5px;
   border: none;
-  width: 300px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-form.form button {
-  background-color: #fff;
-  color: #b91d73;
-  font-weight: bold;
+.clientes-box button:hover {
+  background-color: #d63b6e;
+}
+
+.clientes-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.clientes-table th, .clientes-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.clientes-table th {
+  background-color: #f0f0f0;
 }
