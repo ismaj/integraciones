@@ -1,8 +1,9 @@
-body {
+html,body {
+  padding: 0;
+  height: 100%;
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to bottom right, #b3d9ff, #e6f2ff);
-  height: 100vh;
 }
 
 .clientes-container {
