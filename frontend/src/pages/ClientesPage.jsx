@@ -17,7 +17,7 @@ export default function ClientesPage() {
   }, []);
 
   return (
-    <div className="clientes-layout">
+    <div className="cliente-container">
       <ClienteForm onClienteCreado={cargarClientes} />
       <ClienteTable clientes={clientes} />
     </div>
