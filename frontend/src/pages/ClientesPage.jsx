@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function ClientesPage() {
   const [clientes, setClientes] = useState([]);
-
+ const navigate = useNavigate();
 const handleLogout = () => {
     localStorage.removeItem('token'); // Elimina token
     navigate('/login'); // Redirige
