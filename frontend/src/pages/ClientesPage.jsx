@@ -1,14 +1,14 @@
 import ClienteForm from "../components/ClienteForm";
 import ClienteTable from "../components/ClienteTable";
 import '../components/ClienteForm.css'; // Asegúrate de tener este archivo para estilos
-import { obtenerClientes } from '../api/clientes';
+import { getClientes } from '../api/clientes';
 import React, { useEffect, useState } from 'react';
 
 export default function ClientesPage() {
   const [clientes, setClientes] = useState([]);
 
   const cargarClientes = async () => {
-    const data = await obtenerClientes();
+    const data = await getClientes();
     setClientes(data);
   };
 
