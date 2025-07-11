@@ -15,6 +15,7 @@ export default function ClienteForm({ onClienteCreado }) {
       setNombre('');
       setDni('');
       setDireccion('');
+      if (onClienteCreado) onClienteCreado(); // ✅ Recarga la tabla
     } catch (err) {
       alert("Error al crear cliente");
     }
