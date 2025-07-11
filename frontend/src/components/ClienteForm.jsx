@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { createCliente } from '../api/clientes';
 import './ClienteForm.css'; // Asegúrate de tener este archivo
 
-export default function ClienteForm() {
+export default function ClienteForm({ onClienteCreado }) {
   const [nombre, setNombre] = useState('');
   const [dni, setDni] = useState('');
   const [direccion, setDireccion] = useState('');
