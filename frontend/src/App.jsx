@@ -11,7 +11,7 @@ return (
       <Routes>
         {/* Redirigir si ya está autenticado */}
         <Route element={<RedirectIfAuth />}>
-          <Route path="/login" element={<login-Form />} />
+          <Route path="/login" element={<LoginPage />} />
         </Route>
 
         {/* Rutas protegidas */}
@@ -20,7 +20,7 @@ return (
         </Route>
 
         {/* Redirección por defecto */}
-        <Route path="*" element={<login-Form />} />
+        <Route path="*" element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
   );
