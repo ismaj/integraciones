@@ -16,7 +16,7 @@ return (
 
         {/* Rutas protegidas */}
         <Route element={<PrivateRoute />}>
-          <Route path="/clientes" element={<ClienteForm />} />
+          <Route path="/clientes" element={<ClientesPage />} />
         </Route>
 
         {/* Redirección por defecto */}
