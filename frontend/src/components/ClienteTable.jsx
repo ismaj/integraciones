@@ -19,10 +19,6 @@ export default function TablaClientes({ clientes }) {
               <td>{c.nombre}</td>
               <td>{c.dni}</td>
               <td>{c.direccion}</td>
-              <td>
-                <button onClick={() => onEdit(cliente)} style={{ marginRight: '0.5rem' }}>Editar</button>
-                <button onClick={() => onDelete(cliente.id)} style={{ background: 'red', color: 'white' }}>Eliminar</button>
-              </td>
             </tr>
           ))}
         </tbody>
