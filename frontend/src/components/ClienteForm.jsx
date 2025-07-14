@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { createCliente } from '../api/clientes';
 import './ClienteForm.css'; // Asegúrate de tener este archivo
+import { showSuccess,showError } from '../utils/alerts';
+
 
 export default function ClienteForm({ onClienteCreado }) {
   const [nombre, setNombre] = useState('');
@@ -11,13 +13,15 @@ export default function ClienteForm({ onClienteCreado }) {
     e.preventDefault();
     try {
       await createCliente({ nombre, dni, direccion });
-      alert("Cliente creado exitosamente");
+      showSuccess('Cliente creado exitosamente'); // ✅ Muestra mensaje de éxito
+      // Limpia los campos del formulario
       setNombre('');
       setDni('');
       setDireccion('');
       if (onClienteCreado) onClienteCreado(); // ✅ Recarga la tabla
     } catch (err) {
-      alert("Error al crear cliente");
+      showError('Error al crear el cliente'); // ❌ Muestra mensaje de error
+      console.error('Error al crear el cliente:', err); // Log del error para depuración  
     }
   };
 
