@@ -1,4 +1,4 @@
-import Swal from 'sweetalert2';
+const Swal = require('sweetalert2')
 
 export const showSuccess = (message) => {
   Swal.fire({
