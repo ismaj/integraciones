@@ -1,4 +1,4 @@
-import Swal from 'react-sweetalert2';
+import Swal from 'sweetalert2';
 
 export const showSuccess = (message) => {
   Swal.fire({
